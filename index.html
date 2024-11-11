@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SECH Academy</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Body Background */
+    body {
+      background-color: skyblue;
+    }
+
+    /* Header and Navigation */
+    .header {
+      background-color: royalblue;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-size: xx-large;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      background-color: royalblue;
+      color: white;
+      font-size: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+    }
+
+    .nav a:hover {
+      background-color: skyblue;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url("ba.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      height: 500px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: yellow;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: rgb(236, 236, 45);
+      color: royalblue;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .hero button:hover {
+      background-color: skyblue;
+    }
+
+    /* Container Styling */
+    .container {
+      background-color: yellow;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .container h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .container p, .container ul {
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: royalblue;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Responsive Design for Smaller Screens */
+    @media (max-width: 768px) {
+      .header {
+        font-size: large;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav a {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      .hero {
+        padding: 50px 20px;
+        height: auto;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .container {
+        max-width: 90%;
+        padding: 15px;
+      }
+
+      .container h3 {
+        font-size: 24px;
+      }
+
+      .container p, .container ul {
+        font-size: 16px;
+      }
+
+      .footer {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>SECH Academy</h1>
+  </div>
+
+  <div class="nav">
+    <a href="application.html" target="_blank" download>Applications</a>
+    <a href="#about">About Us</a>
+    <a href="#vision">Vision</a>
+    <a href="#mission">Mission</a>
+    <a href="#objectives">Objectives</a>
+    <a href="#sech-way">The SECH Way</a>
+    <a href="#why-choose-us">Why Choose Us?</a>
+    <a href="#admissions">Admissions</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#grading-system">Grading System</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="hero">
+    <h2>SECH Academy: Bridging the Gap in Education and Sport Development</h2>
+    <button onclick="window.location.href='#about'">Learn More</button>
+    <button onclick="window.location.href='#admissions'">Explore Admissions</button>
+  </div>
+
+  <div id="about" class="container">
+    <h3>About Us</h3>
+    <p>Sech Academy is a state-of-the-art center framed to offer ground-breaking teaching 
+      and learning in delivering and supporting both secondary education and sport development.</p>
+  </div>
+
+  <div id="vision" class="container">
+    <h3>Vision</h3>
+    <p>Leader in advanced educational methodologies and master in sport development.</p>
+  </div>
+
+  <div id="mission" class="container">
+    <h3>Mission Statement</h3>
+    <p>Relegating barriers towards learning and diversifying career paths.</p>
+  </div>
+
+  <div id="objectives" class="container">
+    <h3>Objectives</h3>
+    <ul>
+      <li>Achieve academic excellence and promote sport development for job creation.</li>
+      <li>Empower children and youth to develop a career through their talents.</li>
+      <li>Promote and support mental health.</li>
+      <li>Principal Values: Professionalism, Integrity, Transparency, and Accountability.</li>
+      <li>Inclusion and collaboration, creativity and innovation, high work ethic.</li>
+    </ul>
+  </div>
+
+  <div id="sech-way" class="container">
+    <h3>The SECH Way</h3>
+    <p>Learner-centered lessons, cognitive series games, interactive tutorials, situational method in teaching, SECH e-tutor, positive reinforcement, and parental engagement.</p>
+  </div>
+
+  <div id="why-choose-us" class="container">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>SECH Academy promotes good mental health in response to high orphanages, escalating divorce rates, domestic violence, etc.</li>
+      <li>We offer full residential accommodation to supervise learning habits and schedules beyond the classroom.</li>
+      <li>Sport development: We view sport beyond recreation. Football and other sports are promoted to harness natural athletic abilities for economic productivity and self-reliance.</li>
+    </ul>
+  </div>
+
+  <div id="admissions" class="container">
+    <h3>Admissions</h3>
+    <p>Admissions are open in Grade 8. We believe in setting our own foundation for the holistic development of our learners.</p>
+  </div>
+
+  <div id="curriculum" class="container">
+    <h3>Curriculum</h3>
+    <p>We offer the curriculum developed by the Ministry of Education and Training in Lesotho, with
+    subjects that include French, English, Travel and Tourism, Life skills, Maths, Physical science, Sesotho, Agriculture, Development Studies.</p>
+  </div>
+
+  <div id="grading-system" class="container">
+    <h3>Grading System</h3>
+    <ul>
+      <li><strong>Pass with Distinction:</strong> 80% and above on a minimum of six subjects plus a pass in English language.</li>
+      <li><strong>First Class:</strong> 70-79% aggregate score on a minimum of five compulsory subjects plus English.</li>
+      <li><strong>Second Class:</strong> 60-69% aggregate score, including a minimum pass of 4 subjects (English included).</li>
+      <li><strong>Ordinary Pass:</strong> 50-59% aggregate score, including a minimum of 4 subjects plus a pass in English language.</li>
+      <li><strong>Promotion:</strong> 45-49% aggregate score, including a pass in a minimum of two compulsory subjects plus one elective subject.</li>
+      <li><strong>Unsuccessful and Must Repeat:</strong> 44% and below.</li>
+    </ul>
+  </div>
+
+  <div id="contact" class="container contact">
+    <h3>Contact Us</h3>
+    <p>Phone: 59669494 | Location: Thabaneng Leloaleng | Email: sechacademy2024@gmail.com</p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 SECH Academy. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

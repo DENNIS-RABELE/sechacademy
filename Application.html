@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application for Admission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="file"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .gender-group {
+            display: flex;
+            gap: 15px;
+        }
+        .form-section input[type="radio"] {
+            margin-right: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Application for Admission</h1>
+
+    <div class="form-section">
+        <h2>Personal Information</h2>
+        <div class="form-group">
+            <label>Full Name AS PER ID</label>
+            <input type="text" name="full_name" placeholder="Please type">
+        </div>
+        <div class="form-group">
+            <label>Nationality</label>
+            <select name="nationality">
+                <option value="Mosotho">Mosotho</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>ID/Passport Number</label>
+            <input type="text" name="id_passport_number" placeholder="Please type">
+        </div>
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" name="dob">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-group">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+        </div>
+        <!-- Added Email and Phone Number fields -->
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Please type your email">
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone_number" placeholder="Please type your phone number">
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2>Permanent Address</h2>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" name="address" placeholder="Please type">
+        </div>
+        <div class="form-group">
+            <label>Country</label>
+            <select name="country">
+                <option value="Lesotho">Lesotho</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" placeholder="Please type">
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2>Academic Information</h2>
+        <div class="form-group">
+            <label>Select Class</label>
+            <select name="Class">
+                <option value="Grade 8">Grade 8</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+            </select>
+        </div>
+        <!-- Added Ecol Student Number field -->
+        <div class="form-group">
+            <label>Ecol Student Number</label>
+            <input type="text" name="ecol_student_number" placeholder="Please enter your Ecol Student Number">
+        </div>
+        <!-- Added Results fields -->
+        <div class="form-group">
+            <label>Mathematics Results</label>
+            <input type="text" name="math_results" placeholder="Please type">
+        </div>
+        <div class="form-group">
+            <label>English Results</label>
+            <input type="text" name="english_results" placeholder="Please type">
+        </div>
+        <div class="form-group">
+            <label>Physical Science Results (Optional)</label>
+            <input type="text" name="physical_science_results" placeholder="Please type (Optional)">
+        </div>
+        <div class="form-group">
+            <label>Biology Results (Optional)</label>
+            <input type="text" name="biology_results" placeholder="Please type (Optional)">
+        </div>
+        <div class="form-group">
+            <label>Average Pass Mark</label>
+            <input type="text" name="average_pass_mark" placeholder="Please type">
+        </div>
+    </div>
+
+    <button class="submit-btn" type="button" onclick="submitApplication()">Submit Application</button>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAPrHG_mpi0UnnluLly4nQfXRnaHHuvo4I",
+        authDomain: "sech-academy-13ee4.firebaseapp.com",
+        databaseURL: "https://sech-academy-13ee4-default-rtdb.firebaseio.com",
+        projectId: "sech-academy-13ee4",
+        storageBucket: "sech-academy-13ee4.appspot.com",
+        messagingSenderId: "67753901836",
+        appId: "1:67753901836:web:b1a92d3d459c644be79329"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Define the function in the global scope
+    window.submitApplication = function() {
+        const fullName = document.querySelector('input[name="full_name"]').value;
+        const nationality = document.querySelector('select[name="nationality"]').value;
+        const idNumber = document.querySelector('input[name="id_passport_number"]').value;
+        const dob = document.querySelector('input[name="dob"]').value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const phoneNumber = document.querySelector('input[name="phone_number"]').value;
+        const address = document.querySelector('input[name="address"]').value;
+        const country = document.querySelector('select[name="country"]').value;
+        const city = document.querySelector('input[name="city"]').value;
+        const selectedClass = document.querySelector('select[name="Class"]').value;
+        const ecolStudentNumber = document.querySelector('input[name="ecol_student_number"]').value;
+        const mathResults = document.querySelector('input[name="math_results"]').value;
+        const englishResults = document.querySelector('input[name="english_results"]').value;
+        const physicalScienceResults = document.querySelector('input[name="physical_science_results"]').value;
+        const biologyResults = document.querySelector('input[name="biology_results"]').value;
+        const averagePassMark = document.querySelector('input[name="average_pass_mark"]').value;
+
+        const applicationId = Date.now().toString();
+
+        set(ref(database, 'applications/' + applicationId), {
+            fullName,
+            nationality,
+            idNumber,
+            dob,
+            gender,
+            email,
+            phoneNumber,
+            address,
+            country,
+            city,
+            selectedClass,
+            ecolStudentNumber,
+            mathResults,
+            englishResults,
+            physicalScienceResults,
+            biologyResults,
+            averagePassMark
+        })
+        .then(() => {
+            alert("Application submitted successfully!");
+        })
+        .catch((error) => {
+            console.error("Error submitting application: ", error);
+            alert("Failed to submit application. Please try again.");
+        });
+    };
+</script>
+
+</body>
+</html>
